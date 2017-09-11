@@ -12208,7 +12208,7 @@ amount =  10000
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">file</span> scopetest.py
@@ -12221,18 +12221,21 @@ def scope_changed():
         hello = &quot;hello local&quot;
     
     def change_nonlocal():
-        nonlocal hello
-        hello = &quot;hello nonlocal&quot;
+        hello = &quot;Hello initial inside change_nonlocal&quot;
+        def f():
+            nonlocal hello
+            hello = &quot;hello nonlocal&quot;
+        f()
         
     def change_global():
         global hello
         hello = &quot;Hello global&quot;
     
-    print(&quot;Before change_local:&quot;, hello)
+    print(&quot;Before change_local:&quot;, hello)# these refer to local hello from top function
     change_local()
     print(&quot;After change_local: &quot;,hello)
     change_nonlocal()
-    print(&quot;After change_local: &quot;,hello)
+    print(&quot;After change_nonlocal: &quot;,hello)
     change_global()
     print(&quot;After change_global: &quot;, hello)
     
@@ -12266,7 +12269,7 @@ print(&quot;Outside : &quot;, hello)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python scopetest.py
@@ -12289,8 +12292,8 @@ print(&quot;Outside : &quot;, hello)
 <pre>Initial value: Hello Initial
 Before change_local: hello from scope_changed()
 After change_local:  hello from scope_changed()
-After change_local:  hello nonlocal
-After change_global:  hello nonlocal
+After change_nonlocal:  hello from scope_changed()
+After change_global:  hello from scope_changed()
 Outside :  Hello global
 </pre>
 </div>
@@ -12341,6 +12344,450 @@ print(l)</code></pre>
     .
     .
     .</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+        
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="k">class</span> <span class="nc">Square</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">side</span> <span class="o">=</span> <span class="n">s</span>
+    
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">side</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">side</span>
+    
+<span class="k">class</span> <span class="nc">Triangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+  
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="n">Circle</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Square</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Square</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span>
+<span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">area</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">]</span>
+<span class="n">areas</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[3.141592653589793, 1, 12.566370614359172, 4]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Triangle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">area</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-24-a9e10ed9f43d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">[</span>s<span class="ansi-blue-fg">.</span>area<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> s <span class="ansi-green-fg">in</span> shapes<span class="ansi-blue-fg">]</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-24-a9e10ed9f43d&gt;</span> in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-blue-fg">[</span>s<span class="ansi-blue-fg">.</span>area<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> s <span class="ansi-green-fg">in</span> shapes<span class="ansi-blue-fg">]</span>
+
+<span class="ansi-red-fg">AttributeError</span>: &#39;Triangle&#39; object has no attribute &#39;area&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Basic idea of classes in python does not work with types. It just works with atrributes. we just make use of object attributes without worrying what object it it. If attribute is not there it fails. Basic logic while implementing 
+above list comprehension was that the list contains shapes which has attribute area().</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Why-Classes?">Why Classes?<a class="anchor-link" href="#Why-Classes?">&#182;</a></h3><p>Lets try to see with simple example. Let us try to model a bank account. Initialy let it be a module with the required functions in it</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">file</span> bank0.py
+
+balance = 0
+
+def deposit(amount):
+    global balance
+    balance = balance + amount
+
+def withdraw(amount):
+    global balance
+    balance = balance - amount
+
+def get_balance():
+    return balance
+
+def main():
+    deposit(100)
+    withdraw(40)
+    print(get_balance())
+    
+    deposit(20)
+    print(get_balance())
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Writing bank0.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python bank0.py
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>60
+80
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But what if we want to model multiple accounts? the bank0 module allows only one instance of banck account.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">file</span> bank1.py
+&quot;&quot;&quot;Implementation of bank accounts with support for multiple accounts.
+&quot;&quot;&quot;
+
+def make_account():
+    return {&quot;balance&quot;: 0}
+
+def deposit(account, amount):
+    account[&quot;balance&quot;] += amount
+
+def withdraw(account, amount):
+    account[&quot;balance&quot;] -= amount
+    
+def get_balance(account):
+    return account[&quot;balance&quot;]
+
+def main():
+    a1 = make_account()
+    a2 = make_account()
+    
+    deposit(a1, 100)
+    deposit(a2, 50)
+    print(get_balance(a1), get_balance(a2))
+    
+    withdraw(a1, 30)
+    withdraw(a2, 20)
+    print(get_balance(a1), get_balance(a2))
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Writing bank1.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python bank1.py
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>100 50
+70 30
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>functions <strong>manipulate</strong> data nicely, while classes <strong>model</strong> the data nicely. A class is a great way of describing what something is rather than manipulating data. Above example shows that you can model data even with functions. but now lets try it using classes.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">file</span> bank2.py
+&quot;&quot;&quot;Class-based implementation of bank account.
+&quot;&quot;&quot;
+
+class BankAccount:
+    def __init__(self):
+        self.balance = 0
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        self.balance -= amount
+
+    def get_balance(self):
+        return self.balance
+
+def main():
+    a1 = BankAccount()
+    a2 = BankAccount()
+    
+    a1.deposit(100)
+    a2.deposit(50)
+    print(a1.get_balance(), a2.get_balance())
+    
+    a1.withdraw(30)
+    a2.withdraw(20)
+    print(a1.get_balance(), a2.get_balance())
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Writing bank2.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>python bank2.py
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>100 50
+70 30
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>If you have a number of related functions that you just want to bundle, a module will be do the work.</li>
+<li>The purpose of a class is to bundle a data structure which represents some logical entity with the operations that work with this data structure.</li>
+<li>One of the big advantages of using OOP is extensibility.</li>
+</ul>
 
 </div>
 </div>
@@ -12893,7 +13340,7 @@ print(l)</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that <code>outside_increment</code> and <code>A.increment</code> are actually same, but writing a function outside class is only confusing but not useful.</p>
+<p>Note that <code>outside_increment</code> and <code>A.increment</code> are actually same, but writing a function outside class is only confusing but not adding extra usefulness.</p>
 
 </div>
 </div>
