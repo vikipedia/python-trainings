@@ -1,0 +1,20 @@
+
+
+|--------+----------------------+-------------------|
+| topic  | subtopics            | problems/examples |
+|--------+----------------------+-------------------|
+| warmup | datatypes            |                   |
+|        | builtins - len,str   |                   |
+|        | int, max, min        |                   |
+|        | strings, indexing    |                   |
+|        | *,+,len,lower,upper, |                   |
+|        | endswith,            |                   |
+|        | startswith,          |                   |
+|        | format               |                   |
+|        |                      |                   |
+|        | lists indexing       |                   |
+|        | index, + , *,        |                   |
+|        |                      |                   |
+|        | control flow         |                   |
+|        | "lic" in "alice"     |                   |
+|        |                      |                   |
