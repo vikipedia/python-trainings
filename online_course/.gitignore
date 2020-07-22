@@ -1,0 +1,22 @@
+# class/object files
+*.py[cod]
+*.[oa]
+
+#editor files
+*~
+
+#database
+db.sqlite3
+
+#local scratch notes
+Notes.ipynb
+scratch
+build
+code
+notebooks
+
+#ignore files in build directory
+__pycache__
+
+#jupyter notebook checkpoints
+.ipynb_checkpoints
