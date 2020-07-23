@@ -9,19 +9,36 @@ books and music. Find total yearly expense for each category of expense.
 
 **Assignment 2.2**
 
-See wikipedia page for `qif` file format. Write a script to convert a bank
-statement given in qif format to CSV format. Every transaction looks as
-given below::
+Write a script to convert a bank statement given in qif format to CSV format.
+Every transaction looks as given below. Every transcation has five items, each
+item in seperate line. Item is decided from first character of line.
+
+
+==================  ============
+First character     meaning
+==================  ============
+D                   date
+T                   amount
+L                   category
+A                   balance
+M                   description
+==================  ============
+
+
+here is one sample entry from transcation.::
 
   D3/23/20
   T-435.60
-  N
-  P
-  SNo
   LUncategorized
   A290787.28
-  V3/23/20
   MIPAY/ESHP/BD/2603301992/SIDB8647142351_AMAZON
+  ^
+
+Every transaction is seperated by one or more empty lines. Last line of
+transaction is a line with character "^". First line of file tells what type of
+statement it is.::
+
+  !Type:Bank
 
 
 **Assignment 2.3**
@@ -58,3 +75,31 @@ Convert following loops into list/dictionary comprehensions
     for t in ["IBM","MICROSOFT","APPLE"]:
       a = weeklyaverage(prices, t)
       weekly[t] = a
+
+**Assignment 2.4**
+
+Financial data is given in tabular format as two dimensional list. It is a list
+of rows and every row is again list of numeric or text values. Write a
+function to ``filter_rows`` out rows such that n'th item in row is greater
+than ``x``
+
+**Assignment 2.5**
+
+Write classes ``Workbook`` and ``Sheet`` such that Sheet consists of rows and
+columns (in simple words tabular data). Sheet supports following actions.
+
+  * it can be asked to give row count
+  * it can be asked to give column count
+  * it can be asked to give name of sheet
+  * it can be asked to give item in m'th row and n'th column
+  * it can be asked to give i'th row.
+
+class ``Workbook`` has collection of sheets in it. It should support following
+actions.
+
+  * one can ask for name of Workbook
+  * one can ask for number sheets it has
+  * one can add a new sheet to it.
+  * one can delete a sheet of given name from it.
+  * one can ask for names of sheets in it.
+  * one can ask for a sheet of given name from it.
