@@ -32,3 +32,4 @@ How can we do this with pandas?
    :caption: Contents:
 
    problems.rst
+   project.rst

@@ -1,5 +1,5 @@
-Assignments
-===========
+Assignments - Module II
+=======================
 
 **Assignment 2.1**
 
@@ -80,8 +80,8 @@ Convert following loops into list/dictionary comprehensions
 
 Financial data is given in tabular format as two dimensional list. It is a list
 of rows and every row is again list of numeric or text values. Write a
-function to ``filter_rows`` out rows such that n'th item in row is greater
-than ``x``
+function ``filter_rows`` to filter out rows such that n'th item in row is
+greater than ``x``
 
 **Assignment 2.5**
 
