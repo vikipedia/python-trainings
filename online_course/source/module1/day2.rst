@@ -111,6 +111,14 @@ Here are some methods that allow us to remove trainling spaces from a string.::
   >>> '    this has spaces on both sides     '.strip()
   'this has spaces on both sides'
 
+Method chaining
+---------------
+
+Have a look at chain of methods called on a string.::
+
+  sentence = "   hello method chaining!   "
+  sentence.strip().split()[-1]
+  ---->---->---->----->----->methods will get executed in this order
 
 **Problem 2.1**
 
@@ -216,8 +224,56 @@ and some other manipulations::
   [4, 3, 2, 1]
 
 
-- Creating custom functions
-- A function with return and without return
+Creating custom functions
+-------------------------
+
+So far we have used statements. Putting few statements together for frequent use
+is doen through function. Functions allow us to make black box abstraction. Its
+like a box which has got some inputs and it does something on inputs and user
+justs the output back. For example let's make a balck box for computing square::
+
+  def square(x):
+      return x*x
+
+The moment we define function as given above, python creates some blackbox for
+the code inside it. it stores that box in python's memory. It creates a name
+``square`` in current namespace. And links this name to the black box. This is how
+we call this function.::
+
+  >>> square # this is not calling, it just refering to name square!
+  <function __main__.square(x)>
+  >>> square(4) ## <--- this is how you call the blackbox functionality.
+  16
+
+Let's look closely at the syntax::
+
+  def sumofsquares(a, b): # this is where function defination starts, has to end with :
+      a2 = square(a) # next line must be indented (4 spaces as a convention)
+      b2 = square(b) # all lines in this code block have same indentation.
+      return a1 + b2 # finally return statement
+
+  sumofsquares(2, 3) ## here indentation comes back to original , function is over this line is outside function.
+
+As function must have atleast one statement. There is empty statement to make
+empty function.::
+
+  def donothing():
+      pass
+
+A function can be defined without return statement too.::
+
+  def say_hello(name):
+      print("Hello ", name)
+
+Make a note what happens if save the result of function in a variable.::
+
+  >>> sqr5 = square(5)
+  >>> print(sqr5)
+  25
+  >>> hello = say_hello("python")
+  Hello python
+  >>> print(hello)
+  None
 
 
 Calling Function Vs Function
@@ -247,3 +303,57 @@ While calling a function::
   add(a, b) #incorrect if a and b are are not predefined.
   a = 2
   b = 3
+
+
+Nested function call
+--------------------
+
+When function calls are nested, inner most function is evaluated first then next
+inner most, then next ... like this till all nested function calls are over.::
+
+  def square(x):
+      return x*x
+
+  def double(x):
+      return 2*x
+
+  def addone(x):
+      return x+1
+
+Following line will get executed as given below::
+
+  addone(double(square(3)))
+  addone(double(9)) # square is evaluated
+  addone(18) # double is evaluated
+  19 # addone is evaluated
+
+**Problem 2.6**
+
+  Net asset value, or NAV, is equal to a fund's or company's total assets less its
+  liabilities. NAV is usually computed per share value for MF,ETF or closed ended
+  fund. Write a function to compute NAV. Compute NAV for total assets of 25,00,00,000,
+  liabilities of 30,00,000 and 1000 shares.
+
+    >>> NAV(assets,liabilities,shares)
+
+
+**Problem 2.7**
+
+  In a financial terms a negative balance is represented with round barackets
+  around the number instead of ``-`` sign. Write a function ``numeric_value``
+  which returns actual numeric value. For example a value ``"(1234)"`` should
+  get -1234 as numeric value. while "1234.5" will still get value as 1234.5.::
+
+    >>> numeric_value("(35.5)")
+    -35.5
+    >>> numeric_value("32.5")
+    32.5
+
+**Problem 2.8**
+
+  Have a look at following python code, what will it print?::
+
+    def double(x):
+        print(2*x)
+
+    print(double(double(3)))
