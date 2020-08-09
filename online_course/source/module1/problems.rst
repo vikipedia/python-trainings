@@ -54,15 +54,27 @@ Seeing numbers in different world
     sum(["a","b","c","d"])
 
 
-
 **Problem 2.1**
 
   Net asset value, or NAV, is equal to a fund's or company's total assets less its
   liabilities. NAV is usually computed per share value for MF,ETF or closed ended
-  fund. Write a function to compute NAV
+  fund. Write a function to compute NAV. Compute NAV for total assets of 25,00,00,000,
+  liabilities of 30,00,000 and 1000 shares.
 
     >>> NAV(assets,liabilities,shares)
 
+
+**Problem 2.2**
+
+  In a financial terms a negative balance is represented with round barackets
+  around the number instead of ``-`` sign. Write a function ``numeric_value``
+  which returns actual numeric value. For example a value ``"(1234)"`` should
+  get -1234 as numeric value. while "1234.5" will still get value as 1234.5.::
+
+    >>> numeric_value("(35.5)")
+    -35.5
+    >>> numeric_value("32.5")
+    32.5
 
 
 **Problem 3.1**

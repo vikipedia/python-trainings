@@ -6,14 +6,6 @@ Problems
   There is a string "abrakadabra", we want to capitalize alternate character from it.
   how can we do it? can a list comprehension be used to do this?
 
-**Problem 1.2**
-
-  Write a function ``flatten`` which flattens 2 dimentional list into one
-  dimensional list. it should work like this::
-
-    >>> flatten([[1,2,3], ['a','b','c']])
-    [1, 2, 3, 'a', 'b', 'c']
-
 **Problem 1.3**
 
   There are two lists
@@ -71,7 +63,13 @@ Sample run is shown below::
   3
   >>> SUMIFS(a, ">=40")
   5
-  >>> SUMIFS(a, "40")
+  >>> SUMIFS(a, "40")**Problem 1.2**
+
+  Write a function ``flatten`` which flattens 2 dimentional list into one
+  dimensional list. it should work like this::
+
+    >>> flatten([[1,2,3], ['a','b','c']])
+    [1, 2, 3, 'a', 'b', 'c']
   3
   >>> SUMIFS(a, "<>40")
   5
@@ -87,8 +85,3 @@ Solutions
 
   def merge(first, second):
       return sum([[a,b] for a,b in zip(first, second)], [])
-
-**Solution 1.3**::
-
-  def flatten(a):
-      return sum(a, [])

@@ -130,7 +130,16 @@ enclosed in triple quotes is multiline string.::
   'This is first line of my poem\nThis is second \nand this s third line'
 
 Make note of this special character ``\n``. This is called as newline character.
-This character when printed will become newline or carriage return.
+This character when printed will become newline or carriage return. Special
+characters are escaped with this special charecter ``\``, for example.::
+
+  ===========    =========
+  escape char    meaning
+  ===========    =========
+  ``\n``         new line
+  ``\t``         tab
+  ``\\``         \
+  ===========    =========
 
 String works with some opeartors just like numbers.::
 
@@ -141,7 +150,7 @@ String works with some opeartors just like numbers.::
 
 **Problem 1.1**
 
-  Use python to convert asset value originally given in EUR to INR.
+  Use python to convert asset value, 20345.5 originally given in EUR to INR.
 
 **Problem 1.2**
 
@@ -198,8 +207,7 @@ What can be used as variable name has some rules.
   * It can be single word (meaning no space or hyphen allowed.)
   * It can have alphabets, numbers and underscore
 
-The assignment operator also allows us to assign multiple values at a time.
-.. code-block:: python
+The assignment operator also allows us to assign multiple values at a time.::
 
   >>> a, b = 2, 3
   >>> a
@@ -357,6 +365,15 @@ Here is another example of dictionary::
   >>> stock = {"name":"IBM", "open":123, "high":126, "low": 120, "close":123.5}
   >>> stock['open']
   123
+
+
+Boolean
+-------
+
+There are boolean types supported in python
+
+  >>> True
+  >>> False
 
 Functions
 ---------
