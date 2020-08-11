@@ -46,6 +46,11 @@ every function call a new namespace is created. And variables in function reside
 in this newly created namespace. As soon as function call is over, namespace
 created with function call is also deleted, so all variables in it.
 
+Scope rules
+  - Any name the statement refers, is looked in local scope first.
+  - if name is not there is local scope, global scope is chacked for reading
+  - if local name exists, then there is no way we can get global with same name
+
 
 **Problem 3.1**
 
