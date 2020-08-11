@@ -387,7 +387,8 @@ The result we get by using correct order of arguments is::
   >>> compound_interest(25000, 0.07, 4, 5)
   35369.454893894996
 
-it is way different from incorrect order::
+and if we give arguments in wrong order? it is way different from answer when
+we give correct order::
 
   >>> compound_interest(0.07, 25000, 4, 5)
   5.808821324493564e+74
@@ -415,4 +416,4 @@ specified take it "hello" by default!::
 
 **Problem 2.9**
 
-  
+  Write a function `
