@@ -1,5 +1,5 @@
-Functions and Programming Constructs
-====================================
+Functions and Scope
+===================
 
 
 Styleguide for writing functions

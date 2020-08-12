@@ -137,15 +137,15 @@ for loops works on strings, lists, tuples, dictionaries etc.::
   List of urls is given. Some urls are from same domain, some are from different.
   Find unique domain names used in the urls.::
 
-  urls = ['www.abrakadabra.com/dccEcB/EGdd',
- 'www.abrakadabra.com/gADFeD/bcAF',
- 'www.abra.com/AGadbb/eagE',
- 'www.dabra.com/cffdfD/FCAD',
- 'www.abra.com/GFGaBE/dcfc',
- 'www.abra.com/gaFegG/Bdaf',
- 'www.abrakadabra.com/aGabaf/EEfa',
- 'www.dabra.com/ceEgFD/bGgc',
- 'www.dabra.com/bDEffC/bcEA']
+    urls = ['www.abrakadabra.com/dccEcB/EGdd',
+   'www.abrakadabra.com/gADFeD/bcAF',
+   'www.abra.com/AGadbb/eagE',
+   'www.dabra.com/cffdfD/FCAD',
+   'www.abra.com/GFGaBE/dcfc',
+   'www.abra.com/gaFegG/Bdaf',
+   'www.abrakadabra.com/aGabaf/EEfa',
+   'www.dabra.com/ceEgFD/bGgc',
+   'www.dabra.com/bDEffC/bcEA']
 
 **Problem 4.4**
 
