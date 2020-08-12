@@ -1,8 +1,9 @@
 Functions and Programming Constructs
 ====================================
 
-Writing functions that are reusable
------------------------------------
+
+Styleguide for writing functions
+--------------------------------
 
 A mathematical function that computes result but prints it, is not reusable!::
 
@@ -25,6 +26,70 @@ Some guidelines to remember
   - A reusable function returns the computed value
   - A reusable function does not make use of gloabl variables.
   - A reusable function takes all that is required as argument.
+
+Style guide
+-----------
+  - Give meaningful names to functions
+  - Give meaningful names to variables
+  - Write code to be read by humans first then by machine.
+
+
+Functions Arguments
+-------------------
+
+Have a look at the function::
+
+  def say_hello(name, greeting):
+      print(greeting, name + "!")
+
+The right way to call this function is
+
+  >>> say_hello("Vikrant", "Hello")
+  Hello Vikrant!
+
+But the user mistook the order of argumets!
+
+  >>> say_hello("Hello", "Vikrant")
+  Vikrant Hello!
+
+Which is obviously not acceptable. It could have been some numeric computaion.
+If the order of arguments is wrong, we will likely get wrong results.
+
+  def compound_interest(P, r, n, t):
+      return P*(1 + r/n)**(n*t)
+
+The result we get by using correct order of arguments is::
+
+  >>> compound_interest(25000, 0.07, 4, 5)
+  35369.454893894996
+
+and if we give arguments in wrong order? it is way different from answer when
+we give correct order::
+
+  >>> compound_interest(0.07, 25000, 4, 5)
+  5.808821324493564e+74
+
+How do we solve this? Don't worry python has a solution for this. when in confusion
+use named arguments.::
+
+  >>> compound_interest(P=25000, n=4, t=5, r = 0.07)
+  35369.454893894996
+
+  >>> say_hello(greeting="Namaskar", name="Vikrant")
+  Namaskar Vikrant!
+
+Also sometimes we feel need for default argumets. For example, if no greeting is
+specified take it "hello" by default!::
+
+  def say_hello(name, greeting="Hello"):
+      print(name, greeting + "!")
+
+
+  >>> say_hello("Vikrant")
+  Hello Vikrant!
+  >>> say_hello("Vikrant", greeting="Namaskar")
+  Namaskar Vikrant!
+
 
 Namespace and Functions
 -----------------------
