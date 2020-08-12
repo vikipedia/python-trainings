@@ -275,8 +275,33 @@ Similaraly how to find a record that has max gain?::
   max(records, key=get_gain)
   ("HCL", 1200, 70.5)
 
-- Functions returning functions
-- lambda expression
-- Introduction to Programming constructs
-    - conditions,
-    -  loops
+Functions returning functions
+-----------------------------
+One can write a nested function as given below.::
+
+  def make_addder(x):
+
+      def adder(y):
+          return x+y
+
+      return adder
+
+  >>> adder5 = make_addder(5)
+  >>> adder5(11)
+  16
+  >>> adder5(7)
+  12
+
+
+lambda expression
+-----------------
+
+Following two are equivalent functions::
+
+  def add(x, y):
+      return x+y
+
+  add = lambda x, y: x+y
+
+very handy sometimes for experimentation during development. In production code
+instead of writing lambda functions write functions with appropriate names.
