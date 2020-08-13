@@ -11,6 +11,7 @@ Module-I starts with very basic python, assuming no programming background.
    day2.rst
    day3.rst
    day4.rst
+   day5.rst
    
    problems.rst
    assignments.rst

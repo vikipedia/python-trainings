@@ -28,7 +28,6 @@ Some guidelines to remember
   - A reusable function takes all that is required as argument.
 
 Style guide
------------
   - Give meaningful names to functions
   - Give meaningful names to variables
   - Write code to be read by humans first then by machine.
