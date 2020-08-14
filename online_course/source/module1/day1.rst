@@ -370,7 +370,8 @@ Here is another example of dictionary::
 Boolean
 -------
 
-There are boolean types supported in python
+There are boolean types supported in python which has only two possible literal
+values
 
   >>> True
   >>> False

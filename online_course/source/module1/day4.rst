@@ -35,11 +35,11 @@ results of various operators as given below
 Conditions are one of the basic building blocks of basic programming constructs.::
 
   if "hel" in "cell":
-      print("hell!")
+      print("hell!") # executed if condition of this block is True
   elif "cel" in "hell": # optional
-      print("cell!")
+      print("cell!") # executed if condition of this block is True
   elif "del" in "bell":
-      print("dell!")
+      print("dell!") # executed if condition of this block is True
   else:                 # if no condition matched, this is too optional
       print("opps!")
 
@@ -185,22 +185,3 @@ Medium level Problems
 
     >>> rearramge_max(1312)
     3211
-
-
-- Python modules - some built in modules os, sys
-
-**Problem 4.9**
-
-  Write a function ``listdir`` which will print filenames and folder names in a
-  given folder, such that before every folder it prints a charecter d, and before
-  every file it prints f.::
-
-    >>> listdir("/home/vikrant/training")
-    d arcesium_batch1_module1
-    f notes.tex
-    f hello.py
-    f scratch.ipynb
-
-
-- Writing your own modules
-- Distinguishing modules and scripts
