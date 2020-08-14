@@ -1,7 +1,7 @@
 Assignments - Module I
 ======================
 
-Solutions to these assignments have to be solved at http://lab1/pipal.in
+These assignments have to be solved at http://lab1/pipal.in
 login with your username and credentials. create a notebook with name
 `module1-assignment.ipynb`. Submit your solutions on or before 20th august.
 
@@ -51,7 +51,7 @@ A title of a novel is given in small case as a string. Write a python script
 called ``titlecase.py`` which converts this string such that first letter of
 every word is in upper case.::
 
-  !python3 titlecase.py "programming adventures of a nonprogrammer"
+  !python3 titlecase.py programming adventures of a nonprogrammer
    Programming Adventures Of A Nonprogrammer
 
 **Assignment 1.5**
