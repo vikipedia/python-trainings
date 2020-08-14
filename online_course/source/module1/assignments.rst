@@ -1,6 +1,11 @@
 Assignments - Module I
 ======================
 
+Solutions to these assignments have to be solved at http://lab1/pipal.in
+login with your username and credentials. create a notebook with name
+`module1-assignment.ipynb`. Submit your solutions on or before 20th august.
+
+
 **Assignment 1.1**
 
 Write a python script ``mean.py`` which finds mean of all numbers that are
