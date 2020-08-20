@@ -11,5 +11,11 @@ applications.
    :maxdepth: 2
    :caption: Contents:
 
+   day1.rst
+   day2.rst
+   day3.rst
+   day4.rst
+   day5.rst
+   
    problems.rst
    assignments.rst

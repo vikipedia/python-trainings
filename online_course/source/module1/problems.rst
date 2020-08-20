@@ -100,3 +100,76 @@ Seeing numbers in different world
     INFOSYS 2500
     TATA 400
     WIPRO 1800
+
+Simple Problems
+^^^^^^^^^^^^^^^
+
+**Problem 4.1**
+
+  Write a function ``product`` which finds product of all elements from a list.
+
+    >>> product([3, 2, 4])
+    24
+
+**Problem 4.2**
+
+  Write a function ``factorial`` to find factorial of a number.
+
+  >>> factorial(5)
+  120
+
+**Problem 4.3**
+
+  Write a function ``findlens`` which finds lengths of every word from a given
+  list of words.
+
+    >>> findlens(["one", "two", "three"])
+    [3, 3, 5]
+
+**Problem 4.4**
+
+  Write a function ``find_words_of_len`` to find words of given length from
+  given list.::
+
+    >>> find_words_of_len(words, 3)
+    ['one', 'two', 'six']
+
+Medium level Problems
+^^^^^^^^^^^^^^^^^^^^^
+
+**Problem 4.5**
+
+  Write a function ``unique`` which will remove duplicates from a list.::
+
+    >>> unique([1, 1, 2, 3, 1, 2, 3, 2, 4])
+    [1, 2, 3, 4]
+
+**Problem 4.6**
+
+  List of urls is given. Some urls are from same domain, some are from different.
+  Find unique domain names used in the urls.::
+
+    urls = ['www.abrakadabra.com/dccEcB/EGdd',
+   'www.abrakadabra.com/gADFeD/bcAF',
+   'www.abra.com/AGadbb/eagE',
+   'www.dabra.com/cffdfD/FCAD',
+   'www.abra.com/GFGaBE/dcfc',
+   'www.abra.com/gaFegG/Bdaf',
+   'www.abrakadabra.com/aGabaf/EEfa',
+   'www.dabra.com/ceEgFD/bGgc',
+   'www.dabra.com/bDEffC/bcEA']
+
+**Problem 4.7**
+
+  Write a function ``min2`` which find minimum from given two numbers. Also write
+  a function ``min3`` which can find minimum number from given 3 numbers. Do not
+  make use of bulit in ``min`` function.
+
+
+**Problem 4.8**
+
+  Write a function ``rearramge_max`` to rearrange digits of an integer so as to
+  make maximum integer from it.
+
+    >>> rearramge_max(1312)
+    3211
