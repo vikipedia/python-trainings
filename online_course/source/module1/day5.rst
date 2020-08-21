@@ -6,17 +6,38 @@ Modules - buit int modules
 
 From statements to functions was one level of abstraction. Modules are where
 related functions are kept together. Modules like functions can be recalled
-later when needed. Here are two built in modules of utmost importance.::
+later when needed. Here are few build in modules.::
 
   import os
 
-  for path, dirs, files os.walkdir("/home/vikrant/trainig/"):
+
+
+  os.getcwd()
+  "/home/vikrant/trainig/"
+
+  os.path.join("/","home","vikrant","trainings")
+  "/home/vikrant/trainings"
+
+  os.path.isfile("/home/vikrant/trainings")
+  False
+  os.path.isdir("/home/vikrant/trainings")
+  True
+  os.path.getsize("day1.html")
+  343424
+
+  os.lisdir()
+  ["day1.ipynb",
+  "day1.html",
+  "day2.ipynb",
+  "day2.html"]
+
+  for path, dirs, files os.walkdir("/home/vikrant/trainings/"):
       for f in files:
           print(os.path.join(path, f))
 
-  /home/vikrant/trainig/hello.txt
-  /home/vikrant/training/hello.py
-  /home/vikrant/trainig/day1.ipynb
+  /home/vikrant/trainings/hello.txt
+  /home/vikrant/trainings/hello.py
+  /home/vikrant/trainings/day1.ipynb
 
 
   os.mkdir("/home/vikrant/training/test") # creates a directory
@@ -58,12 +79,18 @@ Here is one more important module ::
 
   import random
   random.random() # returns a random number between 0-1
+  0.2365
   random.choice([1, 2, 3, 4, 5]) # will randomly select one item from list
-  random.shuffle([1, 2, 3, 4, 5]) # shuffle list and return nothing
-
+  5
+  nums = [1, 2, 3, 4, 5]
+  random.shuffle(nums) # shuffle list and return nothing
+  print(nums)
+  [4, 2, 1, 5, 3]
 
 
 Working with dates is made easy with datetime module.::
+
+  import datetime
 
   d1 = datetime.datetime(2020, 11, 20)
   d2 = datetime.datetime.today()
@@ -297,13 +324,3 @@ only while running the module as script. so sys.argv should be accessed only if
     a = int(sys.argv[1])
     b = int(sys.argv[2])
     print(add(a, b))
-
-
-
-
-- Putting it all together
-    - Building command line applications using typer/click
-- Assignments - introduction
-
-- Writing your own modules
-- Distinguishing modules and scripts
