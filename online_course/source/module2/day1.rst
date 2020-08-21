@@ -2,12 +2,8 @@
 Iterations and List comprehensions
 ==================================
 
-
-
 day1 - 2 hours
 --------------
-
-
 
 Iteration patterns
 ------------------
@@ -47,9 +43,7 @@ sometimes we need to go over multiple collections together!::
 
 
 
-    -  reversed
-    - enumerate
-    - zip
+
 - list comprehensions
     - Mapping one list to another list
     - Filtering lists on some conditions

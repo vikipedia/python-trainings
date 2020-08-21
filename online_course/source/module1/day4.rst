@@ -185,15 +185,3 @@ Medium level Problems
 
     >>> rearramge_max(1312)
     3211
-
-**Problem 4.9**
-
-  Write a function `trange` which generates `n` dates from start date. if start
-  is not given , today is taken as start date.::
-
-    >>> trange(5, datetime.datetime(2019, 1, 1))
-    [datetime.datetime(2019, 1, 1, 0, 0),
-     datetime.datetime(2019, 1, 2, 0, 0),
-     datetime.datetime(2019, 1, 3, 0, 0),
-     datetime.datetime(2019, 1, 4, 0, 0),
-     datetime.datetime(2019, 1, 5, 0, 0)]

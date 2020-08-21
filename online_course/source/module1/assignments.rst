@@ -1,9 +1,10 @@
 Assignments - Module I
 ======================
 
-These assignments have to be solved at http://lab1/pipal.in
+These assignments have to be solved at for batch1 at http://lab1.pipal.in
+for bacth2 at http://lab2/pipal.in .
 login with your username and credentials. create a notebook with name
-`module1-assignment.ipynb`. Submit your solutions on or before 20th august.
+`module1-assignment.ipynb`. batch2 can submit solutions on or before 27th august.
 
 
 **Assignment 1.1**
