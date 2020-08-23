@@ -265,7 +265,7 @@ Medium level Problems
   Write a function ``rearramge_max`` to rearrange digits of an integer so as to
   make maximum integer from it.
 
-    >>> rearramge_max(1312)
+    >>> rearramge_max(1312)  - Mapping one list to another list
     3211
 
 
