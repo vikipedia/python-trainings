@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Python For Scratch'
+project = 'Python From Scratch'
 copyright = '2020, Pipal Academy'
 author = 'Vikrant Patil'
 

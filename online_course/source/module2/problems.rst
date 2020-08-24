@@ -2,16 +2,14 @@ Problems
 ========
 
 
-** Problem 1.1**
-
+**Problem 1.1**
   Write a function vector_add, which does vector addition of two vectors taken
   as lists.::
 
     >>> vector_add([1, 1, 1], [3, 4, 5])
     [4, 5, 6]
 
-** Problem 1.2**
-
+**Problem 1.2**
   A matrix is called unit matrix if all elements except diagonal elements in
   every row are 0 and diagonal elements as 1. Write a function to check if given
   matrix is unit matrix or not?::
@@ -26,8 +24,7 @@ Problems
     >>> is_unit_matrix([[1, 2],[2, 1]])
     False
 
-** Problem 1.3**
-
+**Problem 1.3**
   A poem is given in variable `poem`. Write a function `inverted` to print poem
   in such fashion that last line is printed first, then second last, continue
   like things and finally at last prints first line.::
@@ -51,7 +48,6 @@ Problems
 
 
 **Problem 1.4**
-
   There are two lists
 
     >>> a = [1, 2, 3]
@@ -65,7 +61,6 @@ Problems
     [1, 'a', 2, 'b', 3, 'c']
 
 **Problem 1.5**
-
   write function listpy (just like os.listdir!) which uses list comprehension to
   identify py files in given directory.::
 
@@ -76,11 +71,9 @@ Problems
     hello.py
 
 **Problem 1.6**
-
   find sum of all multiples of 7 or 11 below 1000.
 
 **Problem 1.7**
-
   There is a string "abrakadabra", we want to capitalize alternate character from it.
   how can we do it? can a list comprehension be used to do this?
 
@@ -106,7 +99,6 @@ Problems
   comprehension to do this.
 
 **Problem 1.9**
-
   Implement excel function COUNTIFS as a function in python.
   COUNTIFS(criteria_list, condition). Here first argument is the list on
   which count will be performed. Second argument is condition as a string ,
@@ -130,15 +122,13 @@ Problems
     5
 
 **Problem 1.10**
-
-  - Write a function factors which finds all factors of given number (include 1
+  - Write a function `factors` which finds all factors of given number (include 1
     and self)
-  - Write a function is_prime which checks if given number is prime based on
+  - Write a function `is_prime` which checks if given number is prime based on
     fact that prime number has only two factors 1 and self.
-  - Write a list comprehension to generate prime numbers.
+  - Write a list comprehension to generate prime numbers less than n.
 
 **Problem 2.1**
-
 A text file has one item on one line. continious five lines consists of one
 record. After five lines there is an empty line. ::
 
@@ -164,7 +154,7 @@ Solutions
   def merge(first, second):
       return sum([[a,b] for a,b in zip(first, second)], [])
 
-**Solution 1.5**
+**Solution 1.5**::
 
     >>> "".join([x.upper() if i%2==0 else x.lower() for i,x in enumerate("abrakadabra")])
     >>> "".join(["".join([x, y]) for x, y in zip(s[::2], s[1::2].upper())]) #smart but looks complex!
@@ -209,5 +199,3 @@ Solutions
       func, value = cond_and_value(cond)
 
       return sum([1 for x in conditionlist if func(x, value)])
-
-      

@@ -2,8 +2,6 @@
 Iterations and List comprehensions
 ==================================
 
-day1 - 2 hours
---------------
 
 Iteration patterns
 ------------------
@@ -64,7 +62,7 @@ We can go over as many lists as possible::
   x3 y3 z3
   x4 y4 z4
 
-There are few things we should remeber abour `reversed` and `enumerate`. whatever
+There are few things we should remember abour `reversed` and `enumerate`. whatever
 `reversed` and `enumerate` returns is for one time use. i.e it is just a mechanism
 to traverse through the list just once.::
 
@@ -89,16 +87,14 @@ length of reversed or enumerate iterator::
   TypeError: object of type 'list_reverseiterator' has no len()
 
 
-** Problem 1.1**
-
+**Problem 1.1**
   Write a function vector_add, which does vector addition of two vectors taken
   as lists.::
 
     >>> vector_add([1, 1, 1], [3, 4, 5])
     [4, 5, 6]
 
-** Problem 1.2**
-
+**Problem 1.2**
   A matrix is called unit matrix if all elements except diagonal elements in
   every row are 0 and diagonal elements as 1. Write a function to check if given
   matrix is unit matrix or not?::
@@ -113,8 +109,7 @@ length of reversed or enumerate iterator::
     >>> is_unit_matrix([[1, 2],[2, 1]])
     False
 
-** Problem 1.3**
-
+**Problem 1.3**
   A poem is given in variable `poem`. Write a function `inverted` to print poem
   in such fashion that last line is printed first, then second last, continue
   like things and finally at last prints first line.::
@@ -137,7 +132,6 @@ length of reversed or enumerate iterator::
     Beautiful is better than ugly
 
 **Problem 1.4**
-
   There are two lists
 
     >>> a = [1, 2, 3]
@@ -317,7 +311,6 @@ So how do we find weekly average for given symbol?::
   324.51215324332736
 
 **Problem 1.5**
-
   write function listpy (just like os.listdir!) which uses list comprehension to
   identify py files in given directory.::
 
@@ -328,11 +321,9 @@ So how do we find weekly average for given symbol?::
     hello.py
 
 **Problem 1.6**
-
   find sum of all multiples of 7 or 11 below 1000.
 
 **Problem 1.7**
-
   There is a string "abrakadabra", we want to capitalize alternate character from it.
   how can we do it? can a list comprehension be used to do this?
 
