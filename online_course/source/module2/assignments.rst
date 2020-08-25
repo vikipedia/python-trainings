@@ -5,7 +5,30 @@ Assignments - Module II
 
 One year statement for a customer of a online wallet is given in CSV format.
 There are five categories of expenses for that customer as food, travel, utility,
-books and music. Find total yearly expense for each category of expense.
+books and music. Find total yearly expense for each category of expense. The data
+can be downloaded from
+url="https://raw.githubusercontent.com/vikipedia/python-trainings/master/online_course/source/module2/wallet.csv"
+make use of following python script in your jupyter notebook to download the
+file.::
+
+  %%file download.py
+  import sys
+  import requests
+
+  def download(url, filename):
+    resp = requests.get(url)
+    with open(filename, "w") as f:
+        f.write(resp.text)
+
+  if __name__ == "__main__":
+    url = sys.argv[1]
+    filename = sys.argv[2]
+    download(url, filename)
+
+in jupyter you can use following command to download file.::
+
+  !python3 download.py https://raw.githubusercontent.com/vikipedia/python-trainings/master/online_course/source/module2/wallet.csv wallet.csv
+
 
 **Assignment 2.2**
 

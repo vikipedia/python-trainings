@@ -128,22 +128,52 @@ Problems
     fact that prime number has only two factors 1 and self.
   - Write a list comprehension to generate prime numbers less than n.
 
+
+
 **Problem 2.1**
-A text file has one item on one line. continious five lines consists of one
-record. After five lines there is an empty line. ::
+Write a python script `cat.py` which mimics unix command cat. Essentially cat.py
+should print the contents of file to screen.::
 
-  symbol
-  name
-  price
-  change
-  volume
+  python3 cat.py zen.txt
+  The Zen of Python, by Tim Peters
 
-  Parse this file to make a table
-  which looks like as given below::
+  Beautiful is better than ugly.
+  Explicit is better than implicit.
+  Simple is better than complex.
+  Complex is better than complicated.
+  Flat is better than nested.
+  Sparse is better than dense.
+  Readability counts.
+  Special cases aren't special enough to break the rules.
+  Although practicality beats purity.
+  Errors should never pass silently.
+  Unless explicitly silenced.
+  In the face of ambiguity, refuse the temptation to guess.
+  There should be one-- and preferably only one --obvious way to do it.
+  Although that way may not be obvious at first unless you're Dutch.
+  Now is better than never.
+  Although never is often better than *right* now.
+  If the implementation is hard to explain, it's a bad idea.
+  If the implementation is easy to explain, it may be a good idea.
+  Namespaces are one honking great idea -- let's do more of those!
 
-  ====== ==== =====
-  symbol name price
+**Problem 2.2**
+Write a python script `head.py` which mimics unix command head. It should show
+first n lines of file passed as argument.::
 
+  !python3 head.py 5 zen.txt
+  The Zen of Python, by Tim Peters
+
+  Beautiful is better than ugly.
+  Explicit is better than implicit.
+  Simple is better than complex.
+
+**Problem 2.3**
+Write a python script `wc.py` which mimics unix command wc. It should show line
+count , word count and character count of a file.::
+
+  !python3 wc.py zen.txt
+  21 144 857 zen.txt
 
 
 Solutions
