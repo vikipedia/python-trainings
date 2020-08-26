@@ -104,7 +104,33 @@ Convert following loops into list/dictionary comprehensions
 Financial data is given in tabular format as two dimensional list. It is a list
 of rows and every row is again list of numeric or text values. Write a
 function ``filter_rows`` to filter out rows such that n'th item in row is
-greater than ``x``
+greater than ``x``::
+
+  >>> indexdata = [('IBM', 'Monday', 111.71436961893693),
+          ('IBM', 'Tuesday', 141.21220022208635),
+          ('IBM', 'Wednesday', 112.40571010053796),
+          ('IBM', 'Thursday', 137.54133351926248),
+          ('IBM', 'Friday', 140.25154281801224),
+          ('MICROSOFT', 'Monday', 235.0403622499107),
+          ('MICROSOFT', 'Tuesday', 225.0206535036475),
+          ('MICROSOFT', 'Wednesday', 216.10342426936444),
+          ('MICROSOFT', 'Thursday', 200.38038844494193),
+          ('MICROSOFT', 'Friday', 235.80850482793264),
+          ('APPLE', 'Monday', 321.49182055844256),
+          ('APPLE', 'Tuesday', 340.63612771662815),
+          ('APPLE', 'Wednesday', 303.9065277507285),
+          ('APPLE', 'Thursday', 338.1350605764038),
+          ('APPLE', 'Friday', 318.3912296144338)]
+  >>> n, x = 2, 225
+  >>> filter_rows(indexdata, n, x)
+  [('MICROSOFT', 'Monday', 235.0403622499107),
+  ('MICROSOFT', 'Tuesday', 225.0206535036475),
+  ('MICROSOFT', 'Friday', 235.80850482793264),
+  ('APPLE', 'Monday', 321.49182055844256),
+  ('APPLE', 'Tuesday', 340.63612771662815),
+  ('APPLE', 'Wednesday', 303.9065277507285),
+  ('APPLE', 'Thursday', 338.1350605764038),
+  ('APPLE', 'Friday', 318.3912296144338)]
 
 **Assignment 2.5**
 
