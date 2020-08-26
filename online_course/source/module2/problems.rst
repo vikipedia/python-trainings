@@ -175,7 +175,6 @@ count , word count and character count of a file.::
   !python3 wc.py zen.txt
   21 144 857 zen.txt
 
-
 Solutions
 =========
 

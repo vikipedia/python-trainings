@@ -67,11 +67,11 @@ Now lets use it!::
 
     >>> lightA = Light() # creation of instance
     >>> lightB = Light() # another instance
-    >>> lightA.is_on()
+    >>> lightA.is_on() # make note of missing parameter self!
     False
     >>> lightB.is_on()
     False
-    >>> lightA.switch_on()
+    >>> lightA.switch_on() # here also self need not be passed
     >>> lightA.is_on()
     True
     >>> lightB.is_on() # different instances have their own data with them
@@ -172,8 +172,62 @@ called as inherited classes.::
   >>> isinstaneof(g, Light)
   True
 
+With new advances in technology , it is now possible to change color of light
+with some switches. To model such light we can have something as::
 
-- Examples on OOPS
+  class CustomColoredLight(Light):
+
+      def __init__(self, color="white"):
+          self.color = color
+          super().__init__()
+
+      def change_color(self, color):
+          self.color = color
+
+      def get_color(self):
+          return self.color
+
+
+Examples - EBook
+----------------
+Suppose ebook reading has to be modelled using classes. Contents of book are
+given as text. The reader class takes text as input and allows browsing through
+book pagewsie. size of page can be fixe to 20 lines to start with.::
+
+  class EbookReader:
+
+      def __init__(self, contents):
+          self._lines = contents.split("\n")
+          self._pagesize = 20
+          self._position = 0
+
+      def get_next_page(self):
+          if self._position < len(self._lines):
+              page = "\n".join(self._lines[self._position:][:20])
+              self._position += self._pagesize
+              return page
+          return ""
+
+      def read_next_page(self):
+          print(self.get_next_page())
+
+
+      def go_to(self, linenum):
+          if linenum >= 0 and linenum < len(self._lines):
+              self._position = linenum
+
+      def go_to_start(self):
+          self.go_to(0)
+
+
+We can use this book reader::
+
+  import random
+  with open("zen.txt") as f:
+    lines = [line.strip() for line in f]
+    booklines = [random.choice(lines) for i in range(100)]
+    text = "\n".join(booklines)
+    ereader = EbookReader(text)
 
 
 
