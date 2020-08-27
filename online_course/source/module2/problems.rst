@@ -129,6 +129,11 @@ Problems
   - Write a list comprehension to generate prime numbers less than n.
 
 
+**Problem 1.11**
+  - Write a function `transpose` to transpose the 2D list data.
+  - Write a function `clockwise` to rotate tabulardata clockwise by 90 degrees.
+  - Write a function `anticlockwise` to rotate tabulardata anti clockwise by 90
+    degrees.
 
 **Problem 2.1**
 Write a python script `cat.py` which mimics unix command cat. Essentially cat.py
