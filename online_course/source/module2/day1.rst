@@ -373,9 +373,14 @@ So how do we find weekly average for given symbol?::
     5
 
 **Problem 1.10**
-
   - Write a function factors which finds all factors of given number (include 1
     and self)
   - Write a function is_prime which checks if given number is prime based on
     fact that prime number has only two factors 1 and self.
   - Write a list comprehension to generate prime numbers.
+
+**Problem 1.11**
+  - Write a function `transpose` to transpose the 2D list data.
+  - Write a function `clockwise` to rotate tabulardata clockwise by 90 degrees.
+  - Write a function `anticlockwise` to rotate tabulardata anti clockwise by 90
+    degrees.

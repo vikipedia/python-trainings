@@ -1,10 +1,5 @@
 dictionary
 ==========
-Classes problem
----------------
-  - Write a class for Stock with fields name, value, high, low and mechanism to
-    update value. Updating value will also uodate max and min automatically if
-    required.
 
 what is a decorator
 -------------------

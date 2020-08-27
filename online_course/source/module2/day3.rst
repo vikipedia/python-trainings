@@ -229,6 +229,21 @@ We can use this book reader::
     text = "\n".join(booklines)
     ereader = EbookReader(text)
 
+**Problem 3.1**
+  Write a class for Stock with fields name, value, high, low and mechanism to
+  update value. Updating value will also uodate max and min automatically if
+  required.
+
+**Problem 3.2**
+  Write classes `PortFolio` and `Stock`. `PortFolio` has collecton of few
+  Stocks. Each `Stock` has symbol, value (index price) and volume (number of
+  shares of this stock).  On `PortFolio` you can ask for total value of portfolio.
+  and PortFolio has a facility to save PortFolio to CSV file. Is it also possible
+  write a `loader` function which when given this CSV file , can recreate
+  new instance for PortFolio.
+
+
+
 
 
 

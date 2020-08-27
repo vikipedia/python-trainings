@@ -180,6 +180,20 @@ count , word count and character count of a file.::
   !python3 wc.py zen.txt
   21 144 857 zen.txt
 
+
+**Problem 3.1**
+  Write a class for Stock with fields name, value, high, low and mechanism to
+  update value. Updating value will also uodate max and min automatically if
+  required.
+
+**Problem 3.2**
+  Write classes `PortFolio` and `Stock`. `PortFolio` has collecton of few
+  Stocks. Each `Stock` has symbol, value (index price) and volume (number of
+  shares of this stock).  On `PortFolio` you can ask for total value of portfolio.
+  and PortFolio has a facility to save PortFolio to CSV file. Is it also possible
+  write a `loader` function which when given this CSV file , can recreate
+  new instance for PortFolio.
+
 Solutions
 =========
 
@@ -218,18 +232,14 @@ Solutions
                  ">=":op.ge,
                  "<" :op.lt,
                  "<=":op.le,
-                 "<>":op.ne}
+                 "<>":op.ne,
+                 ""  :op.eq}
 
-      for condkey in cond_ops:
-          if cond.startswith(condkey):
-              if len(condkey)==1 and ("=" in cond or ">" in cond):
-                  continue
+      sign = "".join([s for s in cond if not s.isdigit()])
+      number = int("".join([d for d in cond if d.isdigit()]))
 
-              _, value = cond.split(condkey)
-              return cond_ops[condkey], int(value)
-      return op.eq, int(cond)
+      return cond_ops[sign], number
 
   def COUNTIFS(conditionlist, cond):
       func, value = cond_and_value(cond)
-
       return sum([1 for x in conditionlist if func(x, value)])
