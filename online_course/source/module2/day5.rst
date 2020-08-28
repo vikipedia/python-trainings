@@ -131,6 +131,10 @@ To write file use csv.writer and then write row by row.::
 
 Writing Excel Files with xlsxwriter
 -----------------------------------
+- Workbook
+- add_worksheet
+- write
+
 xlsxwriter is a third party library well equiped to write excel files. Not only
 basic tabular data writing but most of excel functionality can be used through
 python scrips, which include all formatting tricks and charts too. Here is very
@@ -194,6 +198,26 @@ We can also try some formatting using this library::
   workbook.close()
 
 
-- Excel tables - add_table,
+Excel tables
+------------
+::
+
+  def write_table(filename, data):
+    workbook = xlsxwriter.Workbook(filename)
+    sheet1 = workbook.add_worksheet("sheet1")
+    sheet1.add_table("A2:D21", {"data":data})
+    workbook.close()
+
+Lets add column headers::
+
+  def write_table(filename, data, headers):
+    workbook = xlsxwriter.Workbook(filename)
+    sheet1 = workbook.add_worksheet("sheet1")
+    sheet1.add_table("A2:D22", {"data":data,
+                               "columns":[{"header":name} for name in headers],
+                               })
+    workbook.close()
+
+
 - Collapsed outline and grouping - set_row
 - Panes - freeze panes
