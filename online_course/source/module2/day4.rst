@@ -111,7 +111,7 @@ Here is refined solution::
     return len([item for item in conditionlist if func(item, value)])
 
 
-Also see a fucntion generating prime numbers::
+Also see a function generating prime numbers::
 
   def primes(n):
       p = []
@@ -126,7 +126,7 @@ Also see a fucntion generating prime numbers::
       return p
 
 Now lets break it up using basic defination of prime number! A prime number has
-no factor other than 1 and itself.(for time lets count 1 as factor!)
+no factor other than 1 and itself.(for time lets count 1 as factor!)::
 
   def factors(n):
       return [f for f in range(1, n+1) if n%f==0]
@@ -177,26 +177,7 @@ string formatting
 Some useful patterns
 --------------------
 
-from cook book
 - Finding commonalities in two dictionaries::
 
-    # Find keys in common
-    a.keys() & b.keys()
-    # { 'x', 'y' }
-    # Find keys in a that are not in b
-    a.keys() - b.keys()
-    # { 'z' }
-    # Find (key,value) pairs in common
-    a.items() & b.items() # { ('y', 2) }
-
-    # Make a new dictionary with certain keys removed
-    c = {key:a[key] for key in a.keys() - {'z', 'w'}}
-    # c is {'x': 1, 'y': 2}
-
-Problems
---------
-  1. Timer class
-  2. Parse a CSVfile indexdata.csv and make a dictionary of columns.::
-
-      {"symbol":["TYX","XYD".....],
-       "price":[]}
+    a.keys() & b.keys() # common keys in a and b
+    { 'x', 'y' }

@@ -63,6 +63,7 @@ statement it is.::
 
   !Type:Bank
 
+Here is url for downloading file https://raw.githubusercontent.com/vikipedia/python-trainings/master/online_course/source/module2/statement.qif
 
 **Assignment 2.3**
 Convert following loops into list/dictionary comprehensions
@@ -98,6 +99,7 @@ Convert following loops into list/dictionary comprehensions
     for t in ["IBM","MICROSOFT","APPLE"]:
       a = weeklyaverage(prices, t)
       weekly[t] = a
+      
 
 **Assignment 2.4**
 
@@ -134,21 +136,25 @@ greater than ``x``::
 
 **Assignment 2.5**
 
-Write classes ``Workbook`` and ``Sheet`` such that Sheet consists of rows and
-columns (in simple words tabular data). Sheet supports following actions.
+Write classes `PortFolio` and `Stock`. Choose appropriate names for instance
+variables and methods.
 
-  * it can be asked to give row count
-  * it can be asked to give column count
-  * it can be asked to give name of sheet
-  * it can be asked to give item in m'th row and n'th column
-  * it can be asked to give i'th row.
+`PortFolio`
+ - has collection of few Stocks.
+ - PortFolio has name.
+ - From `PortFolio` you can ask for total value of portfolio.
+ - has a mechanism to get a stock of given symbol.
+ - PortFolio has a facility to save PortFolio to a CSV file.
+ - One can add new stocks to PortFolio.
+ -
 
-class ``Workbook`` has collection of sheets in it. It should support following
-actions.
+ Each `Stock` has
+ - symbol,
+ - value (index price)
+ - volume (number of shares of this stock).
+ - has a mechanism by which when printed it shows `Stock(symbol, value, volume)`
+ - has a mechanism to update value
+ - has a mechanism to update volume
 
-  * one can ask for name of Workbook
-  * one can ask for number sheets it has
-  * one can add a new sheet to it.
-  * one can delete a sheet of given name from it.
-  * one can ask for names of sheets in it.
-  * one can ask for a sheet of given name from it.
+write a `loader` function which when given CSV file saved by `PortFolio`, can
+recreate new instance for PortFolio.
