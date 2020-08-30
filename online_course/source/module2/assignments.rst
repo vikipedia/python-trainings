@@ -1,6 +1,7 @@
 Assignments - Module II
 =======================
 
+
 **Assignment 2.1**
 
 One year statement for a customer of a online wallet is given in CSV format.
@@ -99,7 +100,7 @@ Convert following loops into list/dictionary comprehensions
     for t in ["IBM","MICROSOFT","APPLE"]:
       a = weeklyaverage(prices, t)
       weekly[t] = a
-      
+
 
 **Assignment 2.4**
 
@@ -146,9 +147,9 @@ variables and methods.
  - has a mechanism to get a stock of given symbol.
  - PortFolio has a facility to save PortFolio to a CSV file.
  - One can add new stocks to PortFolio.
- -
 
- Each `Stock` has
+
+Each `Stock` has
  - symbol,
  - value (index price)
  - volume (number of shares of this stock).
