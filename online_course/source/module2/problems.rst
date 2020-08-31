@@ -187,12 +187,29 @@ count , word count and character count of a file.::
   required.
 
 **Problem 3.2**
-  Write classes `PortFolio` and `Stock`. `PortFolio` has collecton of few
-  Stocks. Each `Stock` has symbol, value (index price) and volume (number of
-  shares of this stock).  On `PortFolio` you can ask for total value of portfolio.
-  and PortFolio has a facility to save PortFolio to CSV file. Is it also possible
-  write a `loader` function which when given this CSV file , can recreate
-  new instance for PortFolio.
+  Write classes `PortFolio` and `Stock`. Choose appropriate names for instance
+  variables and methods.
+
+  `PortFolio`
+   - has collection of few Stocks.
+   - PortFolio has name.
+   - From `PortFolio` you can ask for total value of portfolio.
+   - has a mechanism to get a stock of given symbol.
+   - PortFolio has a facility to save PortFolio to a CSV file.
+   - One can add new stocks to PortFolio.
+
+
+  Each `Stock` has
+   - symbol,
+   - value (index price)
+   - volume (number of shares of this stock).
+   - has a mechanism by which when printed it shows `Stock(symbol, value, volume)`
+   - has a mechanism to update value
+   - has a mechanism to update volume
+
+  write a `loader` function which when given CSV file saved by `PortFolio`, can
+  recreate new instance for PortFolio.
+
 
 Solutions
 =========
