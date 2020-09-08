@@ -290,7 +290,7 @@ Solutions
       return [p for p in range(1, n+1) if is_prime(p)]
 
 
-**Solution 1.11**
+**Solution 1.11**::
 
   def column(tabulardata, n):
       """
