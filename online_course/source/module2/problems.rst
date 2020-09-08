@@ -174,12 +174,29 @@ first n lines of file passed as argument.::
   Simple is better than complex.
 
 **Problem 2.3**
+Write python script `grep.py` which mimics unix command `grep`. grep searches
+for given string in given files and prints those lines which contains the search
+string. Use `typer` module to implement advanced option like
+--invert. when --invert option is given it will print the lines which do not
+have the search string.
+
+**Problem 2.4**
 Write a python script `wc.py` which mimics unix command wc. It should show line
 count , word count and character count of a file.::
 
   !python3 wc.py zen.txt
   21 144 857 zen.txt
 
+**Problem 2.2**
+Write a python script `tail.py` which mimics unix command tail. It should show
+last n lines of file passed as argument.::
+
+  !python3 tail.py --n 5 zen.txt
+  Now is better than never.
+  Although never is often better than *right* now.
+  If the implementation is hard to explain, it's a bad idea.
+  If the implementation is easy to explain, it may be a good idea.
+  Namespaces are one honking great idea -- let's do more of those!
 
 **Problem 3.1**
   Write a class for Stock with fields name, value, high, low and mechanism to
@@ -260,3 +277,38 @@ Solutions
   def COUNTIFS(conditionlist, cond):
       func, value = cond_and_value(cond)
       return sum([1 for x in conditionlist if func(x, value)])
+
+**Solution 1.10**::
+
+  def factors(n):
+      return [i for i in range(1, n+1) if n%i==0]
+
+  def is_prime(p):
+      return len(factors(p))==2
+
+  def primes(n):
+      return [p for p in range(1, n+1) if is_prime(p)]
+
+
+**Solution 1.11**
+
+  def column(tabulardata, n):
+      """
+      return nth column
+      """
+      return [row[n] for row in tabulardata]
+
+  def transpose(tabulardata):
+      colcount = len(tabulardata[0])
+      return [column(tabulardata, c) for c in range(colcount)]
+
+  def reversed_col(data, c):
+      return list(reversed(column(data, c)))
+
+  def rotateclockwise(data):
+      colcount = len(data[0])
+      return [reversed_col(data, c) for c in range(colcount)]
+
+  def rotate_anticlock(data):
+    colcount = len(data[0])
+    return [column(data, c) for c in reversed(range(colcount))]
