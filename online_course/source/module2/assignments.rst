@@ -79,7 +79,7 @@ Convert following loops into list/dictionary comprehensions
             row.append(1)
           else:
             row.append(0)
-      mat.append(col)
+
 
   2::
 
@@ -140,6 +140,14 @@ greater than ``x``::
 Write classes `PortFolio` and `Stock`. Choose appropriate names for instance
 variables and methods.
 
+`Stock` has
+- symbol,
+- value (index price)
+- volume (number of shares of this stock).
+- has a mechanism by which when printed it shows `Stock(symbol, value, volume)`
+- has a mechanism to update value
+- has a mechanism to update volume
+
 `PortFolio`
  - has collection of few Stocks.
  - PortFolio has name.
@@ -147,15 +155,6 @@ variables and methods.
  - has a mechanism to get a stock of given symbol.
  - PortFolio has a facility to save PortFolio to a CSV file.
  - One can add new stocks to PortFolio.
-
-
-Each `Stock` has
- - symbol,
- - value (index price)
- - volume (number of shares of this stock).
- - has a mechanism by which when printed it shows `Stock(symbol, value, volume)`
- - has a mechanism to update value
- - has a mechanism to update volume
 
 write a `loader` function which when given CSV file saved by `PortFolio`, can
 recreate new instance for PortFolio.
