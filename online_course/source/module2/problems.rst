@@ -310,5 +310,5 @@ Solutions
       return [reversed_col(data, c) for c in range(colcount)]
 
   def rotate_anticlock(data):
-    colcount = len(data[0])
-    return [column(data, c) for c in reversed(range(colcount))]
+      colcount = len(data[0])
+      return [column(data, c) for c in reversed(range(colcount))]
