@@ -184,9 +184,81 @@ Here is how one can access columns from this DataFrame::
   IBM      125.7
   NIKE     100.5
   Name: value, dtype: float64
-  
 
-  ​
+What if column name has space in it?::
+
+  >>> df = pd.DataFrame({
+        "value" : [234.5, 221.6, 125.7, 100.5],
+        "high value" : [240.32, 222.5, 127.3, 105.0],
+        "low value" : [233.0, 220.0, 123.0, 104.0],
+        "volume" : [100, 200, 50, 1000]
+      })
+  >>> df['low value']​
+  0    233.0
+  1    220.0
+  2    123.0
+  3    104.0
+  Name: low value, dtype: float64
+
+How to access a row or rows? ::
+
+  >>> stocks.loc['APPLE']
+  value     234.50
+  high      240.32
+  low       233.00
+  volume    100.00
+  Name: APPLE, dtype: float64
+  >>> stocks.loc[["APPLE","AT&T"]]
+  value 	high 	low 	volume
+  APPLE 	234.5 	240.32 	233.0 	100
+  AT&T 	221.6 	222.50 	220.0 	200
+
+How to access few rows and few columns?::
+
+  >>> stocks.loc[["APPLE","AT&T"],["value","volume"]]
+  value 	volume
+  APPLE 	234.5 	100
+  AT&T 	221.6 	200
+
+How to access row by index?::
+
+  >>> stocks.iloc[0]
+  value     234.50
+  high      240.32
+  low       233.00
+  volume    100.00
+  Name: APPLE, dtype: float64
+
+How to access multiple rows with indices?::
+
+  >>> stocks.iloc[[0,3]]
+  value 	high 	low 	volume
+  APPLE 	234.5 	240.32 	233.0 	100
+  NIKE 	100.5 	105.00 	104.0 	1000
+
+How aboubt row and columns together by indices?::
+
+  >>> stocks.iloc[[0,3],[0,1]]
+  value 	high
+  APPLE 	234.5 	240.32
+  NIKE 	100.5 	105.00
+
+can slicing be used?
+
+  >>> stocks.iloc[:2] # first two rows and all columns
+  value 	high 	low 	volume
+  APPLE 	234.5 	240.32 	233.0 	100
+  AT&T 	221.6 	222.50 	220.0 	200
+
+  >>> stocks.iloc[:2, 2:] # take frist two rows and drop first two columns
+  low 	volume
+  APPLE 	233.0 	100
+  AT&T 	220.0 	200
+
+
+
+
+
 
 Working with DataFrame
   - access a column by name
@@ -203,5 +275,9 @@ Working with DataFrame
   - merge
   - join
   - concatenating
+  - groupby
+  - str operations
+  - pd.to_numeric
+  - pd.to_date
 
 - Writing to csv
