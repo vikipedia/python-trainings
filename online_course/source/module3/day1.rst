@@ -258,8 +258,6 @@ can slicing be used?
 
 
 
-
-
 Working with DataFrame
   - access a column by name
   - access a row by indexname
@@ -272,12 +270,87 @@ Working with DataFrame
   - Filtering
 
 - More operations
-  - merge
-  - join
-  - concatenating
-  - groupby
+  - concatenating::
+
+    labels = ["APPLE","AT&T","IBM","NIKE"]
+    value = pd.Series([234.5, 221.6, 125.7, 100.5], index=labels)
+    high = pd.Series([240.32, 222.5, 127.3, 105.0], index=labels)
+    low = pd.Series([233.0, 220.0, 123.0, 104.0], index=labels)
+    volume = pd.Series([100, 200, 50, 1000], index=labels)
+    stocks = pd.DataFrame({"value":value, "high":high, "low":low, "volume":volume})
+
+    stocks1 = pd.DataFrame({
+        "value" : [125, 500.0, 300.4, 423.9],
+        "low" : [125.0, 490.0, 299.5, 421.1],
+        "high" : [130.0, 500.0, 305.0, 425.5],
+        "volume" : [123, 50, 100, 80]
+        },
+        index = ["BELL","XEROX","FORD","TESLA"]
+    )
+
+    pd.cancat(stocks, stocks1)
+
+
+  - merge::
+    df1 = pd.DataFrame(
+    {
+    "a":[1,2, 3, 4, 5],
+    "b":[34, 56, 76, 87, 9],
+    "labels": ["x","y","z","m","n"]
+    }
+    )
+
+    df2 = pd.DataFrame(
+    {
+    "c":[1,2, 3, 4],
+    "d":[34, 56, 76, 87],
+    "labels":["x","y","z","m"]}
+    )
+
+    pd.merge(df2, df1, on="labels")
+    c 	d 	labels 	a 	b
+    0 	1 	34 	x 	1 	34
+    1 	2 	56 	y 	2 	56
+    2 	3 	76 	z 	3 	76
+    3 	4 	87 	m 	4 	87
+
+  - join::
+
+    dfj1 = pd.DataFrame(
+      {
+      "a":[1,2, 3, 4, 5],
+       "b":[34, 56, 76, 87, 9]
+      },
+       index=["x","y","z","m","n"]
+      )
+
+      dfj2 = pd.DataFrame(
+      {
+      "c":[1,2, 3, 4],
+      "d":[34, 56, 76, 87],
+      },
+      index=["x","y","z","m"]
+      )
+
+      dfj1.join(dfj2)
+
+      a 	b 	c 	d
+      x 	1 	34 	1.0 	34.0
+      y 	2 	56 	2.0 	56.0
+      z 	3 	76 	3.0 	76.0
+      m 	4 	87 	4.0 	87.0
+      n 	5 	9 	NaN 	NaN
+
+
   - str operations
+  - groupby
   - pd.to_numeric
   - pd.to_date
 
-- Writing to csv
+- Writing to csv/excel::
+
+  wallet.to_csv("wallet2.csv")
+
+  writer = pd.ExcelWriter("money-control.xlsx", engine="xlsxwriter")
+  wallet.to_excel(writer, sheet_name="statement")
+  writer.save()
