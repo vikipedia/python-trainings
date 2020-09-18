@@ -51,4 +51,36 @@ for full length, Saves the data locally. then computes monthly average of this
 data and save it to excel file. your commandline application should work as
 given below::
 
-  python alphavantage_daily_to_monthly.py --symbol IBM --output IBM_monthly.xlsx
+    python alphavantage_daily_to_monthly.py --help
+    Usage: alphavantage_daily_to_monthly.py [OPTIONS]
+
+    This script downloads data from alphavantage. It downloads daily series
+    for given symbol. computes monthly avearges, open, close, high, low. and
+    saves data in required format.
+
+    various options are
+
+    --csv       if this flag is given it saves data in csv format
+    with this option --csvfile must be given
+
+    --database  if this flag is given it saves data in sqlite database.
+    with this option --dbfile must be given
+
+    --xlsx   if this flag is given it saves dat in xlsx format.           with
+    this option --xlsxfile must be given
+
+    Options:
+    --symbol TEXT                   [default: IBM]
+    --csv / --no-csv                [default: True]
+    --csvfile TEXT                  [default: ]
+    --database / --no-database      [default: False]
+    --dbfile TEXT                   [default: ]
+    --xlsx / --no-xlsx              [default: False]
+    --xlsxfile TEXT                 [default: ]
+    --install-completion [bash|zsh|fish|powershell|pwsh]
+                                    Install completion for the specified shell.
+    --show-completion [bash|zsh|fish|powershell|pwsh]
+                                    Show completion for the specified shell, to
+                                    copy it or customize the installation.
+
+    --help                          Show this message and exit.

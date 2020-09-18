@@ -62,7 +62,7 @@ Try to load  data from url "https://www.moneycontrol.com/markets/indian-indices/
 using `pandas.read_html` function. What is the type of result returned?
 
 DataFrame and Series
------------------
+--------------------
 
 Most important data typr from pandas to represent tabulat data is DataFrame.
 DataFrame consists of columns.::
@@ -269,8 +269,7 @@ Working with DataFrame
   - selecting
   - Filtering
 
-- More operations
-  - concatenating::
+More operations, concatenating::
 
     labels = ["APPLE","AT&T","IBM","NIKE"]
     value = pd.Series([234.5, 221.6, 125.7, 100.5], index=labels)
@@ -290,8 +289,8 @@ Working with DataFrame
 
     pd.cancat(stocks, stocks1)
 
+merge::
 
-  - merge::
     df1 = pd.DataFrame(
     {
     "a":[1,2, 3, 4, 5],
@@ -314,7 +313,7 @@ Working with DataFrame
     2 	3 	76 	z 	3 	76
     3 	4 	87 	m 	4 	87
 
-  - join::
+join::
 
     dfj1 = pd.DataFrame(
       {
@@ -342,14 +341,14 @@ Working with DataFrame
       n 	5 	9 	NaN 	NaN
 
 
-  - str operations
-  - groupby
-  - pd.to_numeric
-  - pd.to_date
+- str operations
+- groupby
+- pd.to_numeric
+- pd.to_date
 
 - Writing to csv/excel::
 
-  wallet.to_csv("wallet2.csv")
+  >>> wallet.to_csv("wallet2.csv")
 
   writer = pd.ExcelWriter("money-control.xlsx", engine="xlsxwriter")
   wallet.to_excel(writer, sheet_name="statement")
