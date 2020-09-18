@@ -49,7 +49,8 @@ Task
 Build a commandline python application which downloads daily time series data
 for full length, Saves the data locally. then computes monthly average of this
 data and save it to excel file. your commandline application should work as
-given below::
+given below. Give requirements.txt with it , so that the user can install 
+dependencies and run the script::
 
     python alphavantage_daily_to_monthly.py --help
     Usage: alphavantage_daily_to_monthly.py [OPTIONS]
