@@ -23,18 +23,13 @@ Look At Error Messages
 
 - Common Exceptions
   - NameError
-  - ValueError
-    - Trying to convert invalid data
-  - TypeError
-    - trying to do operations with incompatible data
-  - AttributError
-    - Trying to access attribute which is not there
-  - IndexError
-    - Check index access or dictinary access
+  - ValueError- Trying to convert invalid data
+  - TypeError - trying to do operations with incompatible data
+  - AttributError - Trying to access attribute which is not there
+  - IndexError - Check index access or dictinary access
 
 
 - No errors , but program is not working
- - Look whether your function has return statement and check indentation level
-   the same
- - print statements
- - pdb
+  - Look whether your function has return statement and check indentation level the same
+  - print statements
+  - pdb
