@@ -1,17 +1,5 @@
-day1
-====
-
-- Operating on tabular data using pandas
-    - Series, Dataframe
-    - Access patterns , selecting
-    - Filtering
-    - Merging, joining, concatenating
-    - groupby
-    - reading/writing datasets using pandas
-
-
 Spreadsheet Of Python
----------------------
+=====================
 
 Pandas is called as Spreadsheet of python. Indeed it is. You can handle tabular
 data very efficiently and with ease using pandas. Here is simple ways by which
@@ -72,7 +60,8 @@ DataFrame consists of columns.::
 
 ​Each column can be accessed using::
 
-  >>> wallet.date
+  wallet.date
+
   0     2021-03-07 14:53:28.377359
   1     2020-10-08 09:53:28.377359
   2     2021-02-23 09:53:28.377359
@@ -86,7 +75,8 @@ DataFrame consists of columns.::
   99    2020-10-11 16:53:28.377359
   Name: date, Length: 100, dtype: object
 
-  >>> wallet['date']
+  wallet['date']
+  
   0     2021-03-07 14:53:28.377359
   1     2020-10-08 09:53:28.377359
   2     2021-02-23 09:53:28.377359
@@ -348,8 +338,7 @@ join::
 
 - Writing to csv/excel::
 
-  >>> wallet.to_csv("wallet2.csv")
-
+  wallet.to_csv("wallet2.csv") # this writes to csv
   writer = pd.ExcelWriter("money-control.xlsx", engine="xlsxwriter")
   wallet.to_excel(writer, sheet_name="statement")
   writer.save()

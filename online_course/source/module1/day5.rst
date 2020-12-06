@@ -187,7 +187,10 @@ a python script. Have a look at simple python file hello.py::
   welcome(name)
 
 
-if we run this script using::
+if we run this script using commandline. Open your system's commandline tool.
+For Linux and Mac Os launch any terminal that you have on your system. For Windows
+open `cmd` tool from windows start menu. After launching this commandline tool type
+as given below::
 
   python3 hello.py
   Hello vikrant!

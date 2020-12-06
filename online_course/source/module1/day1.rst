@@ -29,9 +29,16 @@ Installation
 
 Before we start programming, let's get ready with the tools that we need for
 python programming. We will need python with appropriate version installed on
-our system. Thoughout the tutorial we will be using python 3.7 or more. You can
+our system. Throughout the tutorial we will be using python 3.7 or more. You can
 install python basic from ``python.org`` or you can get a python from anaconda with
 a whole bunch of packages default with it.
+
+
+First Steps - Running python
+-------------------------------
+There are various ways you can run python. Simplest option is to go to 
+commandline tool of your system. For Linux and Mac Os it is terminal,
+for Windows it is cmd. Open up commandline , type `python` and enter.
 
 
 

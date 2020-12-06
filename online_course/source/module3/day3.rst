@@ -1,5 +1,13 @@
-day3
-====
+Datascraping
+============
+
+
+Working with JSON
+-----------------
+
+
+
+
 
 - Fetching data from internet/intranet
     - With requests module get/post APIs
