@@ -48,15 +48,14 @@ Another fancy way of programming python is jupyter notebook. once you launch
 jupyter from console or from start menu, a browser will be launched.
 Create a new notebook. To work with notebook you need to know few key strokes.
 
- ============  ====================================
- keys          action                              
- ============  ====================================
- 
- esc+m         convert the cell to markdown        
- esc+y         convert the cell to code            
- shift+enter   execute the cell                   
- !command      execute system command from jupyter 
- ============  ====================================
+  ===========   ====================================
+  keys          action                              
+  ===========   ====================================
+  esc+m         convert the cell to markdown        
+  esc+y         convert the cell to code            
+  shift+enter   execute the cell                   
+  !command      execute system command from jupyter 
+  ===========   ====================================
 
 
 Numeric And Text data
