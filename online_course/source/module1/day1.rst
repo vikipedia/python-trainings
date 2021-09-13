@@ -42,6 +42,23 @@ for Windows it is cmd. Open up commandline , type `python` and enter.
 
 
 
+Working with jupyter notebook
+-----------------------------
+Another fancy way of programming python is jupyter notebook. once you launch
+jupyter from console or from start menu, a browser will be launched.
+Create a new notebook. To work with notebook you need to know few key strokes.::
+
+ ============  ====================================
+ keys          action                              
+ ============  ====================================
+ 
+ esc+m         convert the cell to markdown        
+ esc+y         convert the cell to code            
+ shift+enter   execute the cell                   
+ !command      execute system command from jupyter 
+ ============  ====================================
+
+
 Numeric And Text data
 ---------------------
 
@@ -161,7 +178,7 @@ String works with some opeartors just like numbers.::
 
 **Problem 1.2**
 
-  Compount interest is calculated using formula P (1 + r/n)\ :sup:`nt`
+  Compound interest is calculated using formula P (1 + r/n)\ :sup:`nt`
   For this formula, ``P`` is the principal amount, ``r`` is the rate of interest
   per annum, ``n`` denotes the number of times in a year the interest gets
   compounded, and t denotes the number of years. Use python to compute compound

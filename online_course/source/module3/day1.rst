@@ -2,7 +2,7 @@ Spreadsheet Of Python
 =====================
 
 Pandas is called as Spreadsheet of python. Indeed it is. You can handle tabular
-data very efficiently and with ease using pandas. Here is simple ways by which
+data very efficiently and with ease using pandas. Here are simple ways by which
 we can import tabular data in pandas. Here is how you can load data from csv file::
 
 
@@ -52,7 +52,7 @@ using `pandas.read_html` function. What is the type of result returned?
 DataFrame and Series
 --------------------
 
-Most important data typr from pandas to represent tabulat data is DataFrame.
+Most important data type from pandas to represent tabular data is DataFrame.
 DataFrame consists of columns.::
 
   >>> wallet.columns
@@ -250,7 +250,7 @@ can slicing be used?
 
 Working with DataFrame
   - access a column by name
-  - access a row by indexname
+  - access a row by index name
   - access a row by index number
   - head
   - tail

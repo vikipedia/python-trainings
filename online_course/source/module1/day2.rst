@@ -278,7 +278,7 @@ Make a note what happens if save the result of function in a variable.::
 
 Calling Function Vs Function
 ----------------------------
-One has to understand defference between calling a function, defining a function
+One has to understand difference between calling a function, defining a function
 and just reffering a function. When we call a function, the arguments can be litterals
 or variables. While when we define a function, arguments defined can be only variable names.
 It can not be litteral while defining a function. For example this would be a mistake::

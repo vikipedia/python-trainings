@@ -31,7 +31,7 @@ later when needed. Here are few build in modules.::
   "day2.ipynb",
   "day2.html"]
 
-  for path, dirs, files os.walkdir("/home/vikrant/trainings/"):
+  for path, dirs, files os.walk("/home/vikrant/trainings/"):
       for f in files:
           print(os.path.join(path, f))
 

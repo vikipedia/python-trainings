@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Python From Scratch'
-copyright = '2020, Pipal Academy'
+copyright = '2020, Vikrant Patil'
 author = 'Vikrant Patil'
 
 

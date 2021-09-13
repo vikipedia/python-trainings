@@ -1,13 +1,13 @@
 Assignments - Module I
 ======================
 
-These assignments have to be solved at for batch1 at http://lab1.pipal.in
-for bacth2 at http://lab2.pipal.in .
-login with your username and credentials. create a notebook with name
-`module1-assignment.ipynb`. batch2 can submit solutions on or before 27th august.
+These assignments have to be solved at http://lab.pipal.in . login with your
+username and credentials.create a notebook with name module1-assignment.ipynb.
+You should submit solutions on or before 17th Dec. Contact me on slack if
+you need any help or if you face any problem while doing the assignment.
 
 
-**Assignment 1.1**
+**Assignment 1.1** 
 
 Write a python script ``mean.py`` which finds mean of all numbers that are
 passed as command line arguments.
@@ -15,7 +15,8 @@ passed as command line arguments.
 **Assignment 1.2**
 
 Daily average prices of some symbols are given each for five days. Write a
-function to compute weekly average for given symbol using this data.::
+function ``weekly_average`` to compute weekly average for given symbol using this data.
+it should work as given below::
 
   prices = [('IBM', 'Monday', 111.71436961893693),
             ('IBM', 'Tuesday', 141.21220022208635),
@@ -32,6 +33,9 @@ function to compute weekly average for given symbol using this data.::
             ('APPLE', 'Wednesday', 303.9065277507285),
             ('APPLE', 'Thursday', 338.1350605764038),
             ('APPLE', 'Friday', 318.3912296144338)]
+  weekly_average(prices, 'APPLE')
+  324.51215324332736
+
 
 **Assignment 1.3**
 
@@ -41,9 +45,10 @@ list.
 
   >>> [[1,2,3],[4,5,6],[7,8,9]]
 
-should create a list
+should create a list::
 
-  >>> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  >>> flatten([[1,2,3],[4,5,6],[7,8,9]])
+  [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
 **Assignment 1.4**

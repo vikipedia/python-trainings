@@ -192,7 +192,7 @@ Examples - EBook
 ----------------
 Suppose ebook reading has to be modelled using classes. Contents of book are
 given as text. The reader class takes text as input and allows browsing through
-book pagewsie. size of page can be fixe to 20 lines to start with.::
+book pagewise. size of page can be fixe to 20 lines to start with.::
 
   class EbookReader:
 

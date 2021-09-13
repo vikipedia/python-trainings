@@ -280,7 +280,7 @@ Without list compreshension we would do it as given here::
     ('IBM', 'Tuesday', 141.21220022208635),
     ('IBM', 'Wednesday', 112.40571010053796),
     ('IBM', 'Thursday', 137.54133351926248),
-    ('IBM', 'Friday', 140.25154281801224)]
+n    ('IBM', 'Friday', 140.25154281801224)]
 
 With list comprehension for this piece of code reduces to single line.::
 
