@@ -46,7 +46,7 @@ Working with jupyter notebook
 -----------------------------
 Another fancy way of programming python is jupyter notebook. once you launch
 jupyter from console or from start menu, a browser will be launched.
-Create a new notebook. To work with notebook you need to know few key strokes.::
+Create a new notebook. To work with notebook you need to know few key strokes.
 
  ============  ====================================
  keys          action                              
@@ -155,7 +155,7 @@ enclosed in triple quotes is multiline string.::
 
 Make note of this special character ``\n``. This is called as newline character.
 This character when printed will become newline or carriage return. Special
-characters are escaped with this special charecter ``\``, for example.::
+characters are escaped with this special charecter ``\``, for example.
 
   ===========    =========
   escape char    meaning
