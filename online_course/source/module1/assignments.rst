@@ -3,14 +3,20 @@ Assignments - Module I
 
 These assignments have to be solved at http://lab.pipal.in . login with your
 username and credentials.create a notebook with name module1-assignment.ipynb.
-You should submit solutions on or before 17th Dec. Contact me on slack if
+You should submit solutions on or before 23rd Sep. Contact me on slack if
 you need any help or if you face any problem while doing the assignment.
 
 
 **Assignment 1.1** 
 
 Write a python script ``mean.py`` which finds mean of all numbers that are
-passed as command line arguments.
+passed as command line arguments. you can make use of `%%file` to write files
+from jupyter. Also you can run commands from jupyter by using `!` at start of line
+as given below. We will use python3 command to test our python scripts::
+  
+  !python3 mean.py 1 2 3 4 5
+  3.0
+
 
 **Assignment 1.2**
 
