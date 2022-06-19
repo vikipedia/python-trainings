@@ -55,40 +55,6 @@ is also possible to make one liner if, else statement.
   >>> x = 2 if cond else 3
   >>> x
 
-
-While Loop
-----------
-
-Here are few examples of using while loop::
-
-  def print_list(items):
-    i = 0
-    while i < len(items):
-        print(items[i], end=",")
-        i += 1
-
-  >>> numbers = [1, 2, 3, 4, 5, 6, 7]
-  >>> print_list(numbers)
-  1,2,3,4,5,6,7,
-
-
-and here is classic fibonacci generators::
-
-  def print_fib(n):
-      """
-      Print fobonacci numbers less than n
-      """
-      curr, prev = 1, 1
-
-      while prev < n:
-            print(prev, end=",")
-            curr, prev = prev+curr, curr
-
-  >>> print_fib(100)
-  1,1,2,3,5,8,13,21,34,55,89,
-
-
-
 For loop
 --------
 
@@ -185,3 +151,38 @@ Medium level Problems
 
     >>> rearramge_max(1312)
     3211
+
+  
+While Loop
+----------
+
+Here are few examples of using while loop::
+
+  def print_list(items):
+    i = 0
+    while i < len(items):
+        print(items[i], end=",")
+        i += 1
+
+  >>> numbers = [1, 2, 3, 4, 5, 6, 7]
+  >>> print_list(numbers)
+  1,2,3,4,5,6,7,
+
+
+and here is classic fibonacci generators::
+
+  def print_fib(n):
+      """
+      Print fobonacci numbers less than n
+      """
+      curr, prev = 1, 1
+
+      while prev < n:
+            print(prev, end=",")
+            curr, prev = prev+curr, curr
+
+  >>> print_fib(100)
+  1,1,2,3,5,8,13,21,34,55,89,
+
+
+

@@ -6,7 +6,7 @@ What is programming?
 
 Consider following sentences in different languages.
 
-- दोन आणि पाच गुणाकार करा आणि आपल्या नोटबुकमध्ये परिणाम लिहा
+- दोन आणि पाच गुणाकार करा आणि आपल्या नोटबुकमध्ये उत्तर लिहा
 - రెండు మరియు ఐదు గుణించి, మీ నోట్‌బుక్‌లో ఫలితాన్ని రాయండి
 - இரண்டு மற்றும் ஐந்தைப் பெருக்கி, உங்கள் நோட்புக்கில் முடிவை எழுதுங்கள்
 - બે અને પાંચને ગુણાકાર કરો અને તમારી નોટબુકમાં પરિણામ લખો
@@ -18,9 +18,9 @@ When you read it what do you do? These are instructions for you to think and
 act. Similarly 'programs' are instructions for computer to think and act.
 Languages that humans speak have wide spectrum right from very primitive to
 advanced one. Similarly computers also have wide spectrum of languages primitives
-to advanced. Instructions in humans language can be regorous and plenty to do
+to advanced. Instructions in humans language can be rigorous and plenty to do
 simple tasks. And there can be few elegant and poetic sentences which can
-inspire people to think and act in complicated and challening senarios.
+inspire people to think and act in complicated and challenging scenarios.
 Here we are going to learn poetic, pythonish way of writing programs which
 will inspire machines to do seemingly complicated jobs.
 
@@ -203,17 +203,17 @@ whenever we type ``x`` we get::
   10
 
 wow! so we stored the value in something which can be recalled with name ``x``.
-This is called as variable. Till now we were talking about litterals.::
+This is called as variable. Till now we were talking about literals.::
 
   >>> 10
   10
 
-This is litteral. while what we see below is Variable::
+This is a literal. while what we see below is Variable::
 
   >>> x
   10
 
-Be carefull with string litterals.::
+Be carefull with string literals.::
 
   >>> vikrant = 10
   >>> "vikrant" # not a variable
@@ -399,6 +399,21 @@ values
   >>> True
   >>> False
 
+Key things to remembers
+-----------------------
+
+- to make a list we make use square brackets []
+- to make a string we make use of single or double quotes
+- to make a tuple we make use of round brackets ()
+- to make a dictionary we make use of curley brackets {}, inside you have to give key:value pairs separated by comma
+
+
+- to access item from a string we use square bracket and integer index inside that string[2]
+- to access item from a list we use square bracket and integer index inside that list[2]
+- to access item from a tuple we use square bracket and integer index inside that tuple[2]
+- to access item from a dictionary we use square bracket and key inside that d['key']to make a dictionary we make use of curley brackets {}, inside you have to give
+
+  
 Functions
 ---------
 Now that basic and some higher level data types are known to us and statements as well,
@@ -534,3 +549,5 @@ It is posible to write complicated list slicing expressions using combination
 of -ve numbers and default values. But it makes the code cryptic. So it is
 advised to make use of standard list slice as shown above. These standard slices
 will make your code concise but same time readable.
+
+..  LocalWords:  pythonish

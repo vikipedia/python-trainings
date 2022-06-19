@@ -266,10 +266,10 @@ How to find a record that has max value?::
   max(records, key=get_value)
   ("INFY", 2000.0, -5)
 
-Similaraly how to find a record that has max gain?::
+Similarly how to find a record that has max gain?::
 
   def get_gain(r):
-      return r[1]
+      return r[2]
 
   max(records, key=get_gain)
   ("HCL", 1200, 70.5)

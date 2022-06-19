@@ -339,7 +339,7 @@ Following line will get executed as given below::
 
 **Problem 2.7**
 
-  In financial terms a negative balance is represented with round barackets
+  In financial terms a negative balance is represented with round brackets
   around the number instead of ``-`` sign. Write a function ``numeric_value``
   which returns actual numeric value. For example a value ``"(1234)"`` should
   get -1234 as numeric value. while "1234.5" will still get value as 1234.5.::
@@ -351,7 +351,7 @@ Following line will get executed as given below::
 
 **Problem 2.8**
 
-  Have a look at following python code, what will it print? Can you correct it?::
+  Have a look at following python code, what will it do? Can you correct it?::
 
     def twice(x):
         print(2*x)
