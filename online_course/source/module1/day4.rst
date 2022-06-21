@@ -58,10 +58,7 @@ is also possible to make one liner if, else statement.
 For loop
 --------
 
-The problem with ``print_list`` function defined above is that , it make use of
-index to iterate over items in list. It is error prone. Many bugs creap in the
-program due to bad book keeping of indices. Python provides a way out of it. To
-iterate over a collection you don't need to keep track of index. Just like in
+To iterate over a collection you don't need to keep track of index. Just like in
 english one would say ``for every_student in class`` ... to iterate over all
 students in class, same way one can iterate over items in a collection in python.::
 
@@ -111,6 +108,13 @@ Simple Problems
 
     >>> find_words_of_len(words, 3)
     ['one', 'two', 'six']
+
+**problem 4.5**
+
+  Write a function ``generate_random`` which generates list of n random numbers::
+
+    >>> generate_random(5)
+    [0.2343,0.6545,0.2947,0.7395,0.4739]
 
 Medium level Problems
 ^^^^^^^^^^^^^^^^^^^^^
@@ -184,5 +188,8 @@ and here is classic fibonacci generators::
   >>> print_fib(100)
   1,1,2,3,5,8,13,21,34,55,89,
 
+The problem with ``print_list`` function defined above is that , it make use of
+index to iterate over items in list. It is error prone. Many bugs creap in the
+program due to bad book keeping of indices. Python provides a way out of it. To
 
 

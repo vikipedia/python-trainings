@@ -33,6 +33,15 @@ that is stored with the given name?::
   >>> int("42")
   42
 
+``list`` can be used to make a list from string (for that matter from any collection)::
+
+  >>> list("1234")
+  ["1","2","3","4"]
+  >>> r5 = range(5)
+  >>> list(r5)
+  [0,1,2,3,4]
+  
+  
 ``max`` function can find maximum value from collection like list or tuple.::
 
   >>> max([23, 12, 34, 13, 5, 6, 12, 35])
