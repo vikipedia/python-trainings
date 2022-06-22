@@ -1,3 +1,7 @@
+Methods, Functions and Scope
+============================
+
+
 String methods
 --------------
 
@@ -206,11 +210,6 @@ and some other manipulations::
   [4, 3, 2, 1]
 
 
-
-Functions and Scope
-===================
-
-
 Styleguide for writing functions
 --------------------------------
 
@@ -240,64 +239,6 @@ Style guide
   - Give meaningful names to functions
   - Give meaningful names to variables
   - Write code to be read by humans first then by machine.
-
-
-Functions Arguments
--------------------
-
-Have a look at the function::
-
-  def say_hello(name, greeting):
-      print(greeting, name + "!")
-
-The right way to call this function is
-
-  >>> say_hello("Vikrant", "Hello")
-  Hello Vikrant!
-
-But the user mistook the order of argumets!
-
-  >>> say_hello("Hello", "Vikrant")
-  Vikrant Hello!
-
-Which is obviously not acceptable. It could have been some numeric computaion.
-If the order of arguments is wrong, we will likely get wrong results.
-
-  def compound_interest(P, r, n, t):
-      return P*(1 + r/n)**(n*t)
-
-The result we get by using correct order of arguments is::
-
-  >>> compound_interest(25000, 0.07, 4, 5)
-  35369.454893894996
-
-and if we give arguments in wrong order? it is way different from answer when
-we give correct order::
-
-  >>> compound_interest(0.07, 25000, 4, 5)
-  5.808821324493564e+74
-
-How do we solve this? Don't worry python has a solution for this. when in confusion
-use named arguments.::
-
-  >>> compound_interest(P=25000, n=4, t=5, r = 0.07)
-  35369.454893894996
-
-  >>> say_hello(greeting="Namaskar", name="Vikrant")
-  Namaskar Vikrant!
-
-Also sometimes we feel need for default argumets. For example, if no greeting is
-specified take it "hello" by default!::
-
-  def say_hello(name, greeting="Hello"):
-      print(name, greeting + "!")
-
-
-  >>> say_hello("Vikrant")
-  Hello Vikrant!
-  >>> say_hello("Vikrant", greeting="Namaskar")
-  Namaskar Vikrant!
-
 
 Namespace and Functions
 -----------------------
@@ -359,6 +300,7 @@ What will this print?::
   foo()
   print(x)
 
+
 **Problem 3.4**
 
 What will this print?::
@@ -384,132 +326,3 @@ What will this print?::
   appendzero(x)
   print(x)
 
-
-Passing Functions As Arguments
-------------------------------
-
-Functions are nothing different from integers and other datatypes. Just like
-integers can be stored inside a variable, same way function can also be! in fact
-they are variables stored inside a variable which has name as *function name*::
-
-  def foo:
-      print("foobar!")
-
-If we examine this variable foo::
-
-  >>> foo
-  <function __main__.foo()>
-  >>> bar = foo
-  >>> bar
-  <function __main__.foo()>
-  >> bar()
-  foobar!
-
-This means just like other variables, one should be able to pass on functions
-as arguments to another functions. One way of looking at pythonish way of
-programming is resuse. Never rewrite same code at two places in same program.::
-
-  def square(x):
-      return x*x
-
-  def sumofsquares(x, y):
-      return square(x) + square(y)
-
-  def cube(x):
-      return x**3
-
-  def sumofcubes(x, y):
-      return cube(x) + cube(y)
-
-If you look closely functions `sumofsquares` and `sumofcubes` are actually same
-pieces of code except the functions `square` and `cube` used in it! This is perfect
-example of code repeatation. We can avoid it by writing a fucntion which abstracts
-out the core idea of ``sumof``::
-
-  def sumof(x, y , func):
-      return func(x) + func(y)
-
-With this function we can do the job of `sumofsquares` using::
-
-  >>> sumof(2, 3, square)
-  13
-
-With the same function we can do the job of `sumofcubes`::
-
-  >>> sumof(2, 3, cube)
-  35
-
-This idea of passing functions as argument is so useful that many python builtin
-functions make use of it. For example max, min, sorted these functions have a named
-parameter. We know normal working of max function::
-
-  >>> max([3, 23, 4, 2])
-  23
-
-But what about working with some complex task like, finding max by some logic.::
-
-  >>> words = ["one", "two", "three", "four", "five", "six"]
-  >>> max(words)
-  'two'
-
-This is as we know by logic of ASCII order. but what if we want to find a word
-with maximum length.::
-
-  >>> max(words, key=len) # tell max.. how to find max... max by len!
-  "three"
-
-Suppose we have some records as given below. A record has name, value and gain::
-
-  records = [
-    ("TATA", 200.0, 5.5),
-    ("INFY", 2000.0, -5),
-    ("RELIANCE", 1505.5, 50.0),
-    ("HCL", 1200, 70.5)
-  ]
-
-How to find a record that has max value?::
-
-  def get_value(r):
-      return r[1]
-
-  max(records, key=get_value)
-  ("INFY", 2000.0, -5)
-
-Similarly how to find a record that has max gain?::
-
-  def get_gain(r):
-      return r[2]
-
-  max(records, key=get_gain)
-  ("HCL", 1200, 70.5)
-
-Functions returning functions
------------------------------
-One can write a nested function as given below.::
-
-  def make_addder(x):
-
-      def adder(y):
-          return x+y
-
-      return adder
-
-  >>> adder5 = make_addder(5)
-  >>> adder5(11)
-  16
-  >>> adder5(7)
-  12
-
-
-lambda expression
------------------
-
-Following two are equivalent functions::
-
-  def add(x, y):
-      return x+y
-
-  add = lambda x, y: x+y
-
-very handy sometimes for experimentation during development. In production code
-instead of writing lambda functions write functions with appropriate names.
