@@ -61,7 +61,7 @@ later when needed. Here are few build in modules.::
   Write a function ``findfiles`` which finds all files in given directory
   recursively with given extension.::
 
-    >>> findfiles("/var/")
+    >>> findfiles("/var/", "log")
     ['/var/log/bootstrap.log',
     '/var/log/alternatives.log',
     '/var/log/dpkg.log',
@@ -74,6 +74,12 @@ later when needed. Here are few build in modules.::
 
     >>> dirsize("/home/vikrant/Documents")
     728
+
+
+**problem 5.4**
+
+  How will you find biggest file from given list of files?
+  
 
 Here is one more important module ::
 
@@ -169,7 +175,7 @@ folder in which it resides to PYTHONPATH.::
 
 Writing Scripts
 ---------------
-If we run python files as written abouve using python interpreter, we call it as
+If we run python files as written above using python interpreter, we call it as
 a python script. Have a look at simple python file hello.py::
 
   %%file hello.py

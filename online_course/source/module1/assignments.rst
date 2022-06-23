@@ -59,12 +59,10 @@ should create a list::
 
 **Assignment 1.4**
 
-A title of a novel is given in small case as a string. Write a python script
-called ``titlecase.py`` which converts this string such that first letter of
-every word is in upper case.::
+Write a python script that computes factorial of a number .::
 
-  !python3 titlecase.py programming adventures of a nonprogrammer
-   Programming Adventures Of A Nonprogrammer
+  !python3 factorial.py 5
+  120
 
 **Assignment 1.5**
 
