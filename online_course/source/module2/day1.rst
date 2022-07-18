@@ -112,7 +112,7 @@ length of reversed or enumerate iterator::
 **Problem 1.3**
   A poem is given in variable `poem`. Write a function `inverted` to print poem
   in such fashion that last line is printed first, then second last, continue
-  like things and finally at last prints first line.::
+  like this and finally at last prints first line.::
 
     >>> poem = """Beautiful is better than ugly.
     Explicit is better than implicit.
@@ -327,6 +327,23 @@ So how do we find weekly average for given symbol?::
   There is a string "abrakadabra", we want to capitalize alternate character from it.
   how can we do it? can a list comprehension be used to do this?
 
+
+**Problem 1.10**
+  - Write a function factors which finds all factors of given number (include 1
+    and self)
+  - Write a function is_prime which checks if given number is prime based on
+    fact that prime number has only two factors 1 and self.
+  - Write a list comprehension to generate prime numbers.
+
+
+**Problem 1.11**
+  - Write a function `transpose` to transpose the 2D list data.
+  - Write a function `clockwise` to rotate tabulardata clockwise by 90 degrees.
+  - Write a function `anticlockwise` to rotate tabulardata anti clockwise by 90
+    degrees.
+
+
+  
 **Problem 1.8**
   Some records are stored with timestamp in database as shown below.::
 
@@ -371,16 +388,3 @@ So how do we find weekly average for given symbol?::
     >>> COUNTIFS(a, "40")
     >>> COUNTIFS(a, "<>40")
     5
-
-**Problem 1.10**
-  - Write a function factors which finds all factors of given number (include 1
-    and self)
-  - Write a function is_prime which checks if given number is prime based on
-    fact that prime number has only two factors 1 and self.
-  - Write a list comprehension to generate prime numbers.
-
-**Problem 1.11**
-  - Write a function `transpose` to transpose the 2D list data.
-  - Write a function `clockwise` to rotate tabulardata clockwise by 90 degrees.
-  - Write a function `anticlockwise` to rotate tabulardata anti clockwise by 90
-    degrees.
